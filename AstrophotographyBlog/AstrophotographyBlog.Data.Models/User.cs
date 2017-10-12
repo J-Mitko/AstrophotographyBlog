@@ -17,6 +17,7 @@ namespace AstrophotographyBlog.Data.Models
         public User()
         {
             this.posts = new HashSet<Post>();
+            this.CreatedOn = DateTime.UtcNow;
         }
 
         [Index]
