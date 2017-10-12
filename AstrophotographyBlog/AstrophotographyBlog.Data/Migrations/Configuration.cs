@@ -1,31 +1,54 @@
 namespace AstrophotographyBlog.Data.Migrations
 {
+    using AstrophotographyBlog.Data.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AstrophotographyBlog.Data.MsSqlDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<AstrophotographyBlog.Data.MsSqlDbContext>
     {
+        private const string AdministratorUserName = "info@telerikacademy.com";
+        private const string AdministratorPassword = "123456";
+
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationDataLossAllowed = false;
         }
 
         protected override void Seed(AstrophotographyBlog.Data.MsSqlDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            this.SeedUsers(context);
+            base.Seed(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedUsers(MsSqlDbContext context)
+        {
+            if (!context.Roles.Any())
+            {
+                var roleName = "Admin";
+
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var role = new IdentityRole { Name = roleName };
+                roleManager.Create(role);
+
+                var userStore = new UserStore<User>(context);
+                var userManager = new UserManager<User>(userStore);
+                var user = new User
+                {
+                    UserName = AdministratorUserName,
+                    Email = AdministratorUserName,
+                    EmailConfirmed = true,
+                    CreatedOn = DateTime.Now
+                };
+
+                userManager.Create(user, AdministratorPassword);
+                userManager.AddToRole(user.Id, roleName);
+            }
         }
     }
 }
