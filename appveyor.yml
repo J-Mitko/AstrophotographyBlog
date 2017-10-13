@@ -1,7 +1,7 @@
 configuration: Release
 
 before_build:
-  - nuget restor
+  - nuget restore
   
 build:
   verbosity: minimal
