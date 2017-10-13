@@ -13,7 +13,7 @@ namespace AstrophotographyBlog.Data
     public class MsSqlDbContext : IdentityDbContext<User>
     {
         public MsSqlDbContext()
-            : base("LocalConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
