@@ -1,8 +1,0 @@
-configuration: Release
-
-before_build:
-  - nuget restore AstrophotographyBlog.sln
-  
-build:
-  verbosity: minimal
-  publish_wap: true
