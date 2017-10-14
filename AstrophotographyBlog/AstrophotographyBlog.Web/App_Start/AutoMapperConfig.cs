@@ -9,17 +9,17 @@ namespace AstrophotographyBlog.Web.App_Start
 {
     public class AutoMapperConfig
     {
-        public static IMapperConfigurationExpression Configuration { get; private set; }
+        public static MapperConfiguration Configuration { get; private set; }
 
         public void Execute(Assembly assembly)
         {
-            Mapper.Initialize(
+            Configuration = new MapperConfiguration(
                 cfg =>
                 {
                     var types = assembly.GetExportedTypes();
                     LoadStandardMappings(types, cfg);
+                    LoadReverseMappings(types, cfg);
                     LoadCustomMappings(types, cfg);
-                    Configuration = cfg;
                 });
         }
 
@@ -40,6 +40,25 @@ namespace AstrophotographyBlog.Web.App_Start
             {
                 mapperConfiguration.CreateMap(map.Source, map.Destination);
                 mapperConfiguration.CreateMap(map.Destination, map.Source);
+            }
+        }
+
+        private static void LoadReverseMappings(IEnumerable<Type> types, IMapperConfigurationExpression mapperConfiguration)
+        {
+            var maps = (from t in types
+                        from i in t.GetInterfaces()
+                        where i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapTo<>) &&
+                              !t.IsAbstract &&
+                              !t.IsInterface
+                        select new
+                        {
+                            Destination = i.GetGenericArguments()[0],
+                            Source = t
+                        }).ToArray();
+
+            foreach (var map in maps)
+            {
+                mapperConfiguration.CreateMap(map.Source, map.Destination);
             }
         }
 

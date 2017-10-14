@@ -58,6 +58,16 @@ namespace AstrophotographyBlog.Data
             entry.State = EntityState.Modified;
         }
 
+        public T Get(Guid id)
+        {
+            return this.context.Set<T>().Find(id);
+        }
+
+        public T Get(string id)
+        {
+            return this.context.Set<T>().Find(id);
+        }
+
         public void Update(T entity)
         {
             DbEntityEntry entry = this.context.Entry(entity);

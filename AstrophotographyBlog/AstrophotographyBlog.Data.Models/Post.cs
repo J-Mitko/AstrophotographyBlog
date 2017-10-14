@@ -1,5 +1,6 @@
 ﻿using AstrophotographyBlog.Data.Models.Users;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AstrophotographyBlog.Data.Models
 {
@@ -17,6 +18,9 @@ namespace AstrophotographyBlog.Data.Models
 
         public DateTime Time { get; set; }
 
-        public virtual MainUser Author { get; set; }
+        public string AuthorId { get; set; }
+
+        [ForeignKey("AuthorId")]
+        public virtual User Author { get; set; }
     }
 }

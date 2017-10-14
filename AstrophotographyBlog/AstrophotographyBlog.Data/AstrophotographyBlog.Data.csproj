@@ -60,7 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
-    <Compile Include="EfRepository.cs" />
+    <Compile Include="Migrations\201710141454397_changes to user and post model.cs" />
+    <Compile Include="Migrations\201710141454397_changes to user and post model.Designer.cs">
+      <DependentUpon>201710141454397_changes to user and post model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710141501009_remove requeried field in user display name.cs" />
+    <Compile Include="Migrations\201710141501009_remove requeried field in user display name.Designer.cs">
+      <DependentUpon>201710141501009_remove requeried field in user display name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="Migrations\201710121911324_Init.cs" />
     <Compile Include="Migrations\201710121911324_Init.Designer.cs">
       <DependentUpon>201710121911324_Init.cs</DependentUpon>
@@ -74,14 +82,16 @@
       <DependentUpon>201710140649190_new users and post model changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Contracts\IEfRepository.cs" />
+    <Compile Include="Repositories\Contracts\IPostRepository.cs" />
+    <Compile Include="Repositories\Contracts\ISaveContext.cs" />
+    <Compile Include="Repositories\Contracts\IUserRepository.cs" />
     <Compile Include="SaveContext.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AstrophotographyBlog.Data.Contracts\AstrophotographyBlog.Data.Contracts.csproj">
-      <Project>{24DE3420-E06B-4531-B6A8-284105795806}</Project>
-      <Name>AstrophotographyBlog.Data.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AstrophotographyBlog.Data.Models\AstrophotographyBlog.Data.Models.csproj">
       <Project>{5793DED1-C00B-4128-93DB-915C846E98C7}</Project>
       <Name>AstrophotographyBlog.Data.Models</Name>
@@ -100,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710140649190_new users and post model changes.resx">
       <DependentUpon>201710140649190_new users and post model changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710141454397_changes to user and post model.resx">
+      <DependentUpon>201710141454397_changes to user and post model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710141501009_remove requeried field in user display name.resx">
+      <DependentUpon>201710141501009_remove requeried field in user display name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

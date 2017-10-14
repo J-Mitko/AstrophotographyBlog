@@ -12,8 +12,10 @@ namespace AstrophotographyBlog.Web.App_Start
     using Ninject.Web.Common;
     using Ninject.Extensions.Conventions;
     using AstrophotographyBlog.Data;
-    using AstrophotographyBlog.Data.Contracts;
     using System.Data.Entity;
+    using AstrophotographyBlog.Data.Repositories.Contracts;
+    using AutoMapper;
+    using AstrophotographyBlog.Services.Data.Contracts;
 
     public static class NinjectWebCommon 
     {
@@ -72,16 +74,19 @@ namespace AstrophotographyBlog.Web.App_Start
                  .BindDefaultInterface();
             });
 
-            //kernel.Bind(x =>
-            //{
-            //    x.FromAssemblyContaining(typeof(IService))
-            //     .SelectAllClasses()
-            //     .BindDefaultInterface();
-            //});
+            kernel.Bind(x =>
+            {
+                x.FromAssemblyContaining(typeof(IService))
+                 .SelectAllClasses()
+                 .BindDefaultInterface();
+            });
 
             kernel.Bind(typeof(DbContext), typeof(MsSqlDbContext)).To<MsSqlDbContext>().InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
+            kernel.Bind<IPostRepository>().To<PostRepository>().InRequestScope();
+            kernel.Bind<IUserRepository>().To<UserRepository>().InRequestScope();
             kernel.Bind<ISaveContext>().To<SaveContext>();
+            kernel.Bind<IMapper>().To<Mapper>();
         }        
     }
 }

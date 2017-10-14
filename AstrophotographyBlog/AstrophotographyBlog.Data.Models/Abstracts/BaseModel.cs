@@ -9,7 +9,7 @@ namespace AstrophotographyBlog.Data.Models
         public DataModel()
         {
             this.Id = Guid.NewGuid();
-            this.CreatedOn = DateTime.UtcNow;
+            //this.CreatedOn = DateTime.UtcNow;
         }
 
         [Key]

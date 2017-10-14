@@ -9,6 +9,9 @@ namespace AstrophotographyBlog.Data
 {
     public interface IEfRepository<T> where T : class, IDeletable
     {
+        T Get(Guid id);
+        T Get(string id);
+
         IQueryable<T> All { get; }
         IQueryable<T> AllAndDeleted { get; }
 

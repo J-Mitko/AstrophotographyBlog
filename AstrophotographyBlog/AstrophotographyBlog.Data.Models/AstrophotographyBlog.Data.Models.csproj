@@ -59,21 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\BaseModel.cs" />
+    <Compile Include="Contracts\IAduditble.cs" />
+    <Compile Include="Contracts\IDeletable.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Users\MainUser.cs" />
-    <Compile Include="Users\RegularUser.cs" />
     <Compile Include="Users\User.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AstrophotographyBlog.Data.Contracts\AstrophotographyBlog.Data.Contracts.csproj">
-      <Project>{24DE3420-E06B-4531-B6A8-284105795806}</Project>
-      <Name>AstrophotographyBlog.Data.Contracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

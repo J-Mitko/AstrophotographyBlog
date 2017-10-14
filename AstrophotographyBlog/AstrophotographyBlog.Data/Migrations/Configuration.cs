@@ -41,10 +41,12 @@ namespace AstrophotographyBlog.Data.Migrations
                 var userManager = new UserManager<User>(userStore);
                 var user = new User
                 {
-                    UserName = AdministratorUserName,
+                    UserName = "admin",
                     Email = AdministratorUserName,
                     EmailConfirmed = true,
-                    CreatedOn = DateTime.Now
+                    CreatedOn = DateTime.Now,
+                    DisplayName = "admin",
+                    Country = "BG"
                 };
 
                 userManager.Create(user, AdministratorPassword);
