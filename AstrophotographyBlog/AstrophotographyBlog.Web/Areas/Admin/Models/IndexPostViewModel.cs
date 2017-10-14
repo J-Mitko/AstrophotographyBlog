@@ -1,12 +1,13 @@
-﻿using AstrophotographyBlog.Data.Models;
-using AutoMapper;
+﻿using AutoMapper;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
-
-namespace AstrophotographyBlog.Web.Models
+namespace AstrophotographyBlog.Web.Areas.Admin.Models
 {
-    public class PostViewModel
+    public class IndexPostViewModel
     {
         public Guid ID { get; set; }
 
@@ -20,15 +21,10 @@ namespace AstrophotographyBlog.Web.Models
 
         public string Location { get; set; }
 
-        public string DisplayName { get; set; }
+        public string DisplayUserName { get; set; }
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Time { get; set; }
-
-        public void CreateMappings(IMapperConfigurationExpression configuration)
-        {
-            configuration.CreateMap<Post, PostViewModel> ()
-                .ForMember(x => x.DisplayName, opts => opts.MapFrom(x => x.Author.DisplayName));
-        }
+       
     }
 }

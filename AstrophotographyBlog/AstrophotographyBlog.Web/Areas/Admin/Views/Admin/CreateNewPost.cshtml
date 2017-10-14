@@ -1,0 +1,12 @@
+﻿@model AstrophotographyBlog.Web.Areas.Admin.Models.IndexPostViewModel
+@{
+    ViewBag.Title = "New Post";
+}
+
+@using (Html.BeginForm("Index", "Post", new { area = "Admin" }, FormMethod.Post,
+    new { @class = "form-hozizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+
+}
