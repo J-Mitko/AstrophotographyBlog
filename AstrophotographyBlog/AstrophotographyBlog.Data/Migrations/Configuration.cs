@@ -1,6 +1,7 @@
 namespace AstrophotographyBlog.Data.Migrations
 {
     using AstrophotographyBlog.Data.Models;
+    using AstrophotographyBlog.Data.Models.Users;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;

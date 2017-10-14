@@ -8,6 +8,7 @@ using Owin;
 using AstrophotographyBlog.Web.Models;
 using AstrophotographyBlog.Data;
 using AstrophotographyBlog.Data.Models;
+using AstrophotographyBlog.Data.Models.Users;
 
 namespace AstrophotographyBlog.Web
 {

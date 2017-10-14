@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AstrophotographyBlog.Data.Contracts.Models
+namespace AstrophotographyBlog.Data.Models
 {
     public abstract class DataModel : IAuditable, IDeletable
     {

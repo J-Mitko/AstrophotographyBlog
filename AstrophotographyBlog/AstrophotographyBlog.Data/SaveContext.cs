@@ -1,6 +1,4 @@
-﻿using AstrophotographyBlog.Data.Contracts;
-
-namespace AstrophotographyBlog.Data
+﻿namespace AstrophotographyBlog.Data
 {
     public class SaveContext : ISaveContext
     {

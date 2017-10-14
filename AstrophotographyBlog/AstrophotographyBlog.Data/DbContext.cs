@@ -1,12 +1,9 @@
-﻿using AstrophotographyBlog.Data.Contracts;
-using AstrophotographyBlog.Data.Models;
+﻿using AstrophotographyBlog.Data.Models;
+using AstrophotographyBlog.Data.Models.Users;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AstrophotographyBlog.Data
 {

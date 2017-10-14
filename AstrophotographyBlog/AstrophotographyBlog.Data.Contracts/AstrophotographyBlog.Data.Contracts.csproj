@@ -59,11 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\IAduditble.cs" />
-    <Compile Include="Models\IDeletable.cs" />
-    <Compile Include="IEfRepository.cs" />
-    <Compile Include="ISaveContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

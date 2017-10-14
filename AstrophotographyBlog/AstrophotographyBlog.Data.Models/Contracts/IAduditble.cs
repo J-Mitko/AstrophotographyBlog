@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AstrophotographyBlog.Data.Contracts
+namespace AstrophotographyBlog.Data.Models
 {
     public interface IAuditable
     {

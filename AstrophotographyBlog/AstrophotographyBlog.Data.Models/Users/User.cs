@@ -1,22 +1,17 @@
-﻿using AstrophotographyBlog.Data.Contracts;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace AstrophotographyBlog.Data.Models
+namespace AstrophotographyBlog.Data.Models.Users
 {
     public class User : IdentityUser, IAuditable, IDeletable
     {
-        private ICollection<Post> posts;
-
         public User()
         {
-            this.posts = new HashSet<Post>();
             this.CreatedOn = DateTime.UtcNow;
         }
 
@@ -31,18 +26,6 @@ namespace AstrophotographyBlog.Data.Models
 
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
-
-        public virtual ICollection<Post> Posts
-        {
-            get
-            {
-                return this.posts;
-            }
-            set
-            {
-                this.posts = value;
-            }
-        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

@@ -5,7 +5,8 @@ using System.Web;
 
 namespace AstrophotographyBlog.Web.Models
 {
-    public class PostViewModel
+    public class ExternalLoginListViewModel
     {
+        public string ReturnUrl { get; set; }
     }
 }

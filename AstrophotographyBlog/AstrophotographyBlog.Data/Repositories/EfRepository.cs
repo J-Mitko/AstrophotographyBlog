@@ -1,4 +1,4 @@
-﻿using AstrophotographyBlog.Data.Contracts;
+﻿using AstrophotographyBlog.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

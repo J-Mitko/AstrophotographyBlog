@@ -13,8 +13,8 @@ namespace AstrophotographyBlog.Web.Controllers
     [Authorize]
     public class ManageController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        private ApplicationSignInManager signInManager;
+        private ApplicationUserManager userManager;
 
         public ManageController()
         {
@@ -30,11 +30,11 @@ namespace AstrophotographyBlog.Web.Controllers
         {
             get
             {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+                return signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
             private set 
             { 
-                _signInManager = value; 
+                signInManager = value; 
             }
         }
 
@@ -42,11 +42,11 @@ namespace AstrophotographyBlog.Web.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
-                _userManager = value;
+                userManager = value;
             }
         }
 
@@ -324,10 +324,10 @@ namespace AstrophotographyBlog.Web.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _userManager != null)
+            if (disposing && userManager != null)
             {
-                _userManager.Dispose();
-                _userManager = null;
+                userManager.Dispose();
+                userManager = null;
             }
 
             base.Dispose(disposing);

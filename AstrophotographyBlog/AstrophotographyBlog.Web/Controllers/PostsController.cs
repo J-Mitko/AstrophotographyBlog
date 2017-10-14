@@ -47,7 +47,7 @@ namespace AstrophotographyBlog.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Content,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,ImageTarget,ImageUrl,ImageInfo,Location,Time,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace AstrophotographyBlog.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Content,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Title,ImageTarget,ImageUrl,ImageInfo,Location,Time,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Post post)
         {
             if (ModelState.IsValid)
             {

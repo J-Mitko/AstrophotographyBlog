@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstrophotographyBlog.Data.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstrophotographyBlog.Data", "AstrophotographyBlog.Data\AstrophotographyBlog.Data.csproj", "{8B8962D7-C0F5-4E9D-8B18-BD065F210EFC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F91B157B-B936-44F1-8949-2D7751478C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstrophotographyBlog.Services.Data", "AstrophotographyBlog.Services.Data\AstrophotographyBlog.Services.Data.csproj", "{1195FA3C-18D9-48F5-A0E2-8D5C84C8FDF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{8B8962D7-C0F5-4E9D-8B18-BD065F210EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8962D7-C0F5-4E9D-8B18-BD065F210EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8962D7-C0F5-4E9D-8B18-BD065F210EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1195FA3C-18D9-48F5-A0E2-8D5C84C8FDF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1195FA3C-18D9-48F5-A0E2-8D5C84C8FDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1195FA3C-18D9-48F5-A0E2-8D5C84C8FDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1195FA3C-18D9-48F5-A0E2-8D5C84C8FDF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1195FA3C-18D9-48F5-A0E2-8D5C84C8FDF0} = {F91B157B-B936-44F1-8949-2D7751478C18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF9A4BD1-9AA7-4687-BA81-8247F40DFF07}

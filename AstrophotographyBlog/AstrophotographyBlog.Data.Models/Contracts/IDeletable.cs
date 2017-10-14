@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AstrophotographyBlog.Data.Contracts
+namespace AstrophotographyBlog.Data.Models
 {
     public interface IDeletable
     {

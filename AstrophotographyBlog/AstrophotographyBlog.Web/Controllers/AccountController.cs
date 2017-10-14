@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AstrophotographyBlog.Web.Models;
 using AstrophotographyBlog.Data.Models;
+using AstrophotographyBlog.Data.Models.Users;
 
 namespace AstrophotographyBlog.Web.Controllers
 {
