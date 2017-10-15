@@ -23,6 +23,13 @@ artifacts:
    name: WebSite
    type: WebDeployPackage
 clone_depth: 1
+test_script:
+  - cmd: dotnet run -c Release -p test\dotnet-test-nunit.test.runner\
+  
+  after_test:
+  - cmd: dotnet pack -c Release src\dotnet-test-nunit\
+
+test: off
 #test_script:
   # restore packages for our unit tests
   #- cmd: dotnet restore ./tests/tests.csproj --verbosity m
