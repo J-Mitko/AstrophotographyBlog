@@ -45,8 +45,8 @@ namespace AstrophotographyBlog.Data.Migrations
                     Email = AdministratorUserName,
                     EmailConfirmed = true,
                     CreatedOn = DateTime.Now,
-                    DisplayName = "admin",
-                    Country = "BG"
+                    //DisplayName = "admin",
+                    //Country = "BG"
                 };
 
                 userManager.Create(user, AdministratorPassword);

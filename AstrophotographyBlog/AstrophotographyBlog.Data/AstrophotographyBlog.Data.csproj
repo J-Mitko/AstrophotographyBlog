@@ -68,6 +68,14 @@
     <Compile Include="Migrations\201710141501009_remove requeried field in user display name.Designer.cs">
       <DependentUpon>201710141501009_remove requeried field in user display name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710151537226_fix.cs" />
+    <Compile Include="Migrations\201710151537226_fix.Designer.cs">
+      <DependentUpon>201710151537226_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710151539392_fix user.cs" />
+    <Compile Include="Migrations\201710151539392_fix user.Designer.cs">
+      <DependentUpon>201710151539392_fix user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="Migrations\201710121911324_Init.cs" />
     <Compile Include="Migrations\201710121911324_Init.Designer.cs">
@@ -116,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710141501009_remove requeried field in user display name.resx">
       <DependentUpon>201710141501009_remove requeried field in user display name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710151537226_fix.resx">
+      <DependentUpon>201710151537226_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710151539392_fix user.resx">
+      <DependentUpon>201710151539392_fix user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

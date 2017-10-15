@@ -29,7 +29,7 @@ namespace AstrophotographyBlog.Web.Models
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Post, PostViewModel> ()
-                .ForMember(x => x.DisplayName, opts => opts.MapFrom(x => x.Author.DisplayName));
+                .ForMember(x => x.DisplayName, opts => opts.MapFrom(x => x.Author.UserName));
         }
     }
 }

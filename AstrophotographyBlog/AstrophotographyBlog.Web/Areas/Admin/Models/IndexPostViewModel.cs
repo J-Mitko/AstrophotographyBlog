@@ -32,7 +32,7 @@ namespace AstrophotographyBlog.Web.Areas.Admin.Models
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Post, IndexPostViewModel>()
-                .ForMember(x => x.DisplayUserName, opts => opts.MapFrom(x => x.Author.DisplayName));
+                .ForMember(x => x.DisplayUserName, opts => opts.MapFrom(x => x.Author.UserName));
         }
     }
 }

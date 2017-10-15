@@ -30,7 +30,7 @@ namespace AstrophotographyBlog.Web.Controllers
                     ImageInfo = x.ImageInfo,
                     Location = x.Location,
                     Time = x.Time,
-                    DisplayName = x.Author.DisplayName
+                    DisplayName = x.Author.UserName
                 })
                 .ToList();
 

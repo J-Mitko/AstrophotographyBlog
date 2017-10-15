@@ -51,7 +51,7 @@ namespace AstrophotographyBlog.Web.Controllers
                 ImageInfo = getPost.ImageInfo,
                 Location = getPost.Location,
                 Time = getPost.Time,
-                DisplayName = getPost.Author.DisplayName
+                DisplayName = getPost.Author.UserName
 
             };
 

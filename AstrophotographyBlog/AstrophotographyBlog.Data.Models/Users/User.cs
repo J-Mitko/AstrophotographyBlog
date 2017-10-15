@@ -32,13 +32,13 @@ namespace AstrophotographyBlog.Data.Models.Users
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
 
-        [MinLength(3)]
-        [MaxLength(50)]
-        public string DisplayName { get; set; }
+        //[MinLength(3)]
+        //[MaxLength(50)]
+        //public string DisplayName { get; set; }
 
-        [MinLength(2)]
-        [MaxLength(3)]
-        public string Country { get; set; }
+        //[MinLength(2)]
+        //[MaxLength(3)]
+        //public string Country { get; set; }
 
         public ICollection<Post> Posts
         {
