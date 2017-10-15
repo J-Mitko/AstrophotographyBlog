@@ -1,4 +1,5 @@
 ﻿using AstrophotographyBlog.Data.Models;
+using AstrophotographyBlog.Web.Infrastructure;
 using AutoMapper;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AstrophotographyBlog.Web.Models
 {
-    public class PostViewModel
+    public class PostViewModel : IMapFrom<AstrophotographyBlog.Data.Models.Post>
     {
         public Guid ID { get; set; }
 

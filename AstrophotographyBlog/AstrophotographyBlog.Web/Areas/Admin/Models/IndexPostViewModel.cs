@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using AstrophotographyBlog.Data.Models;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,10 +12,11 @@ namespace AstrophotographyBlog.Web.Areas.Admin.Models
     {
         public Guid ID { get; set; }
 
+        [Required]
         public string Title { get; set; }
-
+        
         public string ImageTarget { get; set; }
-
+        [Required]
         public string ImageUrl { get; set; }
 
         public string ImageInfo { get; set; }
@@ -25,6 +27,12 @@ namespace AstrophotographyBlog.Web.Areas.Admin.Models
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Time { get; set; }
-       
+
+
+        public void CreateMappings(IMapperConfigurationExpression configuration)
+        {
+            configuration.CreateMap<Post, IndexPostViewModel>()
+                .ForMember(x => x.DisplayUserName, opts => opts.MapFrom(x => x.Author.DisplayName));
+        }
     }
 }

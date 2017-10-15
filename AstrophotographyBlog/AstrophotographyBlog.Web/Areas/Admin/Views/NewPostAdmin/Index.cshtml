@@ -1,0 +1,60 @@
+﻿@model AstrophotographyBlog.Web.Areas.Admin.Models.IndexPostViewModel
+@{
+    ViewBag.Title = "New Post";
+}
+
+@using (Html.BeginForm("Index", "NewPostAdmin", new { area = "Admin" }, FormMethod.Post,
+    new { @class = "form-hozizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row text-center">
+        <h1>New Post</h1>
+    </div>
+    <hr>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title, new { @class = "control-label" })
+        <div>
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImageUrl, new { @class = "control-label" })
+        <div>
+            @Html.TextBoxFor(m => m.ImageUrl, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImageTarget, new { @class = "control-label" })
+        <div>
+            @Html.TextBoxFor(m => m.ImageTarget, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImageInfo, new { @class = "control-label" })
+        <div>
+            @Html.TextAreaFor(m => m.ImageInfo, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Location, new { @class = "control-label" })
+        <div>
+            @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Time, new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(m => m.Time, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+}

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace AstrophotographyBlog.Web.Infrastructure
 {
     public interface IMapFrom<T>
+        where T : class
     {
     }
 }

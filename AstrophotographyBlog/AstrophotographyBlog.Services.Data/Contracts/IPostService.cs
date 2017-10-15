@@ -13,6 +13,7 @@ namespace AstrophotographyBlog.Services.Data.Contracts
 
         Post GetById(Guid id);
 
-        void CreatePost(Post post, string authorId);
+        void CreatePost(string title, string imageTarget,
+            string imageUrl, string imageInfo, string location, DateTime time, string authorId);
     }
 }

@@ -20,10 +20,22 @@ namespace AstrophotographyBlog.Services.Data
             this.saveContext = saveContext;
         }
 
-        public void CreatePost(Post post, string authorId)
+        public void CreatePost(string title, string imageTarget,
+            string imageUrl, string imageInfo, string location, DateTime time, string authorId)
         {
-            post.AuthorId = this.userRepository.Get(authorId).Id;
-            this.postRepository.Add(post);
+            var newPost = new Post()
+            {
+                Title = title,
+                ImageTarget = imageTarget,
+                ImageUrl = imageUrl,
+                ImageInfo = imageInfo,
+                Location = location,
+                Time = time,
+                AuthorId = authorId
+
+            };
+
+            this.postRepository.Add(newPost);
             this.saveContext.Commit();
         }
 

@@ -46,5 +46,6 @@ namespace AstrophotographyBlog.Data
         {
             return new MsSqlDbContext();
         }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AstrophotographyBlog.Data.Models;
 using AstrophotographyBlog.Services.Data.Contracts;
 using Microsoft.AspNet.Identity;
+using AstrophotographyBlog.Web.Models;
 
 namespace AstrophotographyBlog.Web.Controllers
 {
@@ -20,24 +21,41 @@ namespace AstrophotographyBlog.Web.Controllers
             this.userService = userService;
         }
         // GET: Posts
+        [HttpGet]
         public ActionResult Index()
         {
             return View(this.postService.GetAll().ToList());
         }
 
         // GET: Posts/Details/5
+        [HttpGet]
         public ActionResult Details(Guid id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = this.postService.GetById(id);
-            if (post == null)
+
+            var getPost = this.postService.GetById(id);
+            if (getPost == null)
             {
                 return HttpNotFound();
             }
-            return View(post);
+
+            var model = new PostViewModel()
+            {
+                ID = getPost.Id,
+                Title = getPost.Title,
+                ImageUrl = getPost.ImageUrl,
+                ImageTarget = getPost.ImageTarget,
+                ImageInfo = getPost.ImageInfo,
+                Location = getPost.Location,
+                Time = getPost.Time,
+                DisplayName = getPost.Author.DisplayName
+
+            };
+
+            return View(model);
         }
 
         // GET: Posts/Create
@@ -51,15 +69,16 @@ namespace AstrophotographyBlog.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,ImageTarget,ImageUrl,ImageInfo,Location,Time,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Post post)
+        public ActionResult Create(PostViewModel model)
         {
             if (ModelState.IsValid)
             {
-                this.postService.CreatePost(post, this.User.Identity.GetUserId());
+                this.postService.CreatePost(model.Title, model.ImageTarget, model.ImageUrl, model.ImageInfo,
+                    model.Location, model.Time, this.User.Identity.GetUserId());
                 return RedirectToAction("Index");
             }
 
-            return View(post);
+            return View(model);
         }
 
         // GET: Posts/Edit/5
