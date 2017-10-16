@@ -1,0 +1,1 @@
+AstrophotographyBlog.Web.Tests.Controllers.PostControllerTest.DetailsShould_ReturnCorrectModelView

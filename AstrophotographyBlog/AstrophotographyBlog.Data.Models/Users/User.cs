@@ -22,14 +22,26 @@ namespace AstrophotographyBlog.Data.Models.Users
 
         public override string Id
         {
-            get => base.Id;
-            set => base.Id = value;
+            get
+            {
+                return base.Id;
+            } 
+            set
+            {
+                base.Id = value;
+            }
         }
 
         public override string UserName
         {
-            get => base.UserName;
-            set => base.UserName = value;
+            get
+            {
+                return base.UserName;
+            } 
+            set
+            {
+                base.UserName = value;
+            }
         }
 
         [Index]
