@@ -9,7 +9,7 @@ namespace AstrophotographyBlog.Services.Data.Contracts
 {
     public interface IPostService : IService
     {
-        IQueryable<Post> GetAll();
+        ICollection<Post> GetAll();
 
         Post GetById(Guid id);
 

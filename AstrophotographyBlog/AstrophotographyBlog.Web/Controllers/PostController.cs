@@ -21,20 +21,20 @@ namespace AstrophotographyBlog.Web.Controllers
             this.userService = userService;
         }
         // GET: Posts
-        [HttpGet]
-        public ActionResult Index()
-        {
-            return View(this.postService.GetAll().ToList());
-        }
+        //[HttpGet]
+        //public ActionResult Index()
+        //{
+        //    return View(this.postService.GetAll().ToList());
+        //}
 
         // GET: Posts/Details/5
         [HttpGet]
         public ActionResult Details(Guid id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
 
             var getPost = this.postService.GetById(id);
             if (getPost == null)
@@ -59,27 +59,27 @@ namespace AstrophotographyBlog.Web.Controllers
         }
 
         // GET: Posts/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        // POST: Posts/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(PostViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                this.postService.CreatePost(model.Title, model.ImageTarget, model.ImageUrl, model.ImageInfo,
-                    model.Location, model.Time, this.User.Identity.GetUserId());
-                return RedirectToAction("Index");
-            }
+        //// POST: Posts/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(PostViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        this.postService.CreatePost(model.Title, model.ImageTarget, model.ImageUrl, model.ImageInfo,
+        //            model.Location, model.Time, this.User.Identity.GetUserId());
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
 
         // GET: Posts/Edit/5
         // public ActionResult Edit(Guid id)

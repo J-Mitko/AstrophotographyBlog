@@ -4,6 +4,7 @@ using System.Linq;
 using AstrophotographyBlog.Data.Models.Users;
 using AstrophotographyBlog.Data.Repositories.Contracts;
 using AstrophotographyBlog.Data;
+using System.Collections.Generic;
 
 namespace AstrophotographyBlog.Services.Data
 {
@@ -20,9 +21,9 @@ namespace AstrophotographyBlog.Services.Data
             this.saveContext = saveContext;
         }
 
-        public IQueryable<User> GetAll()
+        public ICollection<User> GetAll()
         {
-            return userRepository.All;
+            return userRepository.All.ToList();
         }
 
         public User GetById(Guid id)

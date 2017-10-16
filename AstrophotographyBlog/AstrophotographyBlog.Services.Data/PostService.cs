@@ -4,6 +4,7 @@ using System.Linq;
 using AstrophotographyBlog.Data.Models;
 using AstrophotographyBlog.Data.Repositories.Contracts;
 using AstrophotographyBlog.Data;
+using System.Collections.Generic;
 
 namespace AstrophotographyBlog.Services.Data
 {
@@ -39,14 +40,15 @@ namespace AstrophotographyBlog.Services.Data
             this.saveContext.Commit();
         }
 
-        public IQueryable<Post> GetAll()
+        public ICollection<Post> GetAll()
         {
-            return this.postRepository.All;
+            return this.postRepository.All.ToList();
         }
 
         public Post GetById(Guid id)
         {
             return this.postRepository.Get(id);
         }
+
     }
 }

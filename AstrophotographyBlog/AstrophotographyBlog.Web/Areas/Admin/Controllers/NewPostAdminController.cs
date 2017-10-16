@@ -16,6 +16,7 @@ namespace AstrophotographyBlog.Web.Areas.Admin.Controllers
             this.postService = postService;
         }
 
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -34,7 +35,7 @@ namespace AstrophotographyBlog.Web.Areas.Admin.Controllers
         {
             string authorId = this.User.Identity.GetUserId();
 
-            if(!this.ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return this.View(model);
             }

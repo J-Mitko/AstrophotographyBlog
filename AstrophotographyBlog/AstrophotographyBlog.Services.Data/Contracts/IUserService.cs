@@ -9,7 +9,7 @@ namespace AstrophotographyBlog.Services.Data.Contracts
 {
     public interface IUserService : IService
     {
-        IQueryable<User> GetAll();
+        ICollection<User> GetAll();
 
         User GetById(Guid id);
     }

@@ -20,6 +20,18 @@ namespace AstrophotographyBlog.Data.Models.Users
             this.CreatedOn = DateTime.UtcNow;
         }
 
+        public override string Id
+        {
+            get => base.Id;
+            set => base.Id = value;
+        }
+
+        public override string UserName
+        {
+            get => base.UserName;
+            set => base.UserName = value;
+        }
+
         [Index]
         public bool IsDeleted { get; set; }
 
