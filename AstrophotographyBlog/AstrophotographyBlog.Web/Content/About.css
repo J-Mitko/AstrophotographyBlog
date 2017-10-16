@@ -1,0 +1,113 @@
+﻿#about-header {
+    position: relative;
+    min-height: 400px;
+}
+
+#about-header:after {
+    content: '';
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(2px);
+    filter: grayscale(88%);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+div.picture-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+div.picture-text span {
+    display: inline-block;
+    padding: 20px;
+    background-color: #404040;
+    color: #FFFFFF;
+}
+
+#about-title, #about-info {
+    background-color: #D3D3D3;
+}
+
+#about-title {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+#about-title h1 {
+    text-align: center;
+    padding-bottom: 24px;
+    border-bottom: 1px dotted #101010;
+}
+
+div.info-box {
+    margin-bottom: 36px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #FFFFFF;
+    border: 1px dotted #636363;
+    border-radius: 6px;
+    transition: all 1.6s ease-in-out;
+}
+
+div.info-box img {
+    width: 25%;
+    display: block;
+    margin-top: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 50%;
+    filter: blur(2px);
+    filter: grayscale(88%);
+    transition: all 1.6s ease-in-out;
+}
+
+div.info-box:hover {
+    transform: scale(1.04);
+    box-shadow: 8px 8px 8px #404040;
+}
+
+    div.info-box:hover img {
+        filter: blur(0px);
+        filter: grayscale(0%);
+    }
+
+div.info-box h2 {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+div.info-box h3 {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+div.info-box p {
+    text-align: center;
+    font-size: 1em;
+}
+
+div.info-box p a {
+    text-decoration: none;
+    color: #333333;
+    transition: 1.2s all;
+    -webkit-transition: 1.2s all;
+    -moz-transition: 1.2s all;
+    -o-transition: 1.2s all;
+}
+
+div.info-box p a:hover {
+    color: #F53F1A;
+}
