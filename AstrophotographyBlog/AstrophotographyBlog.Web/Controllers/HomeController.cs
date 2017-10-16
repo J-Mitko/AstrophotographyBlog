@@ -18,6 +18,7 @@ namespace AstrophotographyBlog.Web.Controllers
             this.postService = postService;
         }
 
+        [OutputCache(CacheProfile = "ShortCache")]
         public ActionResult Index()
         {
             var posts = postService.GetAll().
@@ -42,6 +43,7 @@ namespace AstrophotographyBlog.Web.Controllers
             return this.View(viewModel);
         }
 
+        [OutputCache(CacheProfile = "LongCache")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

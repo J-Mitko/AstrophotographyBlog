@@ -50,5 +50,67 @@ namespace AstrophotographyBlog.Web.Tests.Services
 
             Assert.AreEqual(post.Id, result.Id);
         }
+
+        [Test]
+        public void CreatePostShould_AddNewPostToPostRepository()
+        {
+            //// Arrange
+            var mockPost = new Post()
+            {
+                Id = Guid.NewGuid(),
+                Title = "testTitle",
+                ImageUrl = "testUrl",
+                ImageTarget = "testTarget",
+                ImageInfo = "testInfo",
+                Location = "TestLocation",
+                Time = DateTime.Now,
+                AuthorId = "authorId",
+                Author = new Data.Models.Users.User()
+                {
+                    UserName = "testUser",
+                    Id = "testUserId"
+                }
+            };
+            var mockPostRepository = new Mock<IPostRepository>();
+            mockPostRepository.Setup(x => x.Add(It.IsAny<Post>()));
+            var mockUserRepository = new Mock<IUserRepository>();
+            var mockSaveContext = new Mock<ISaveContext>();
+
+            var sut = new PostService(mockUserRepository.Object, mockPostRepository.Object, mockSaveContext.Object);
+
+            sut.CreatePost(mockPost.Title, mockPost.ImageTarget, mockPost.ImageUrl, mockPost.ImageInfo, mockPost.Location, mockPost.Time, mockPost.AuthorId);
+            mockPostRepository.Verify(x => x.Add(It.IsAny<Post>()), Times.Once);
+        }
+
+        [Test]
+        public void CreatePostShould_CallCommitMethod()
+        {
+            //// Arrange
+            var mockPost = new Post()
+            {
+                Id = Guid.NewGuid(),
+                Title = "testTitle",
+                ImageUrl = "testUrl",
+                ImageTarget = "testTarget",
+                ImageInfo = "testInfo",
+                Location = "TestLocation",
+                Time = DateTime.Now,
+                AuthorId = "authorId",
+                Author = new Data.Models.Users.User()
+                {
+                    UserName = "testUser",
+                    Id = "testUserId"
+                }
+            };
+            var mockPostRepository = new Mock<IPostRepository>();
+            var mockUserRepository = new Mock<IUserRepository>();
+            var mockSaveContext = new Mock<ISaveContext>();
+            mockSaveContext.Setup(x => x.Commit());
+
+            var sut = new PostService(mockUserRepository.Object, mockPostRepository.Object, mockSaveContext.Object);
+
+            sut.CreatePost(mockPost.Title, mockPost.ImageTarget, mockPost.ImageUrl, mockPost.ImageInfo, mockPost.Location, mockPost.Time, mockPost.AuthorId);
+            mockSaveContext.Verify(x => x.Commit(), Times.Once);
+        }
     }
 }
