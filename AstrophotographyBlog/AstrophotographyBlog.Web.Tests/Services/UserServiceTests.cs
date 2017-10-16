@@ -1,9 +1,13 @@
 ﻿using AstrophotographyBlog.Data;
+using AstrophotographyBlog.Data.Models;
+using AstrophotographyBlog.Data.Models.Users;
 using AstrophotographyBlog.Data.Repositories.Contracts;
 using AstrophotographyBlog.Services.Data;
 using Moq;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AstrophotographyBlog.Web.Tests.Services
 {
@@ -14,11 +18,14 @@ namespace AstrophotographyBlog.Web.Tests.Services
         public void GetAllShould_ReturnAllUsers()
         {
             // Arrange
+            var userList = new List<User>();
+            IQueryable<User> queryUsers = userList.AsQueryable();
+
             var mockPostRepository = new Mock<IPostRepository>();
             var mockUserRepository = new Mock<IUserRepository>();
             var mockSaveContext = new Mock<ISaveContext>();
 
-            mockUserRepository.Setup(x => x.All);
+            mockUserRepository.Setup(x => x.All).Returns(queryUsers);
 
             var sut = new UserService(mockUserRepository.Object, mockPostRepository.Object, mockSaveContext.Object);
 
