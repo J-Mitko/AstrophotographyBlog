@@ -1,0 +1,10 @@
+version: 1.0.{build}
+nuget:
+  project_feed: true
+before_build:
+- cmd: nuget restore ./AstrophotographyBlog/AstrophotographyBlog.sln
+build:
+  project: ./AstrophotographyBlog/AstrophotographyBlog.sln
+  publish_nuget: true
+  include_nuget_references: true
+  verbosity: minimalf
