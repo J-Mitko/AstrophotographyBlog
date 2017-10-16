@@ -60,35 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
-    <Compile Include="Migrations\201710141454397_changes to user and post model.cs" />
-    <Compile Include="Migrations\201710141454397_changes to user and post model.Designer.cs">
-      <DependentUpon>201710141454397_changes to user and post model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710141501009_remove requeried field in user display name.cs" />
-    <Compile Include="Migrations\201710141501009_remove requeried field in user display name.Designer.cs">
-      <DependentUpon>201710141501009_remove requeried field in user display name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710151537226_fix.cs" />
-    <Compile Include="Migrations\201710151537226_fix.Designer.cs">
-      <DependentUpon>201710151537226_fix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710151539392_fix user.cs" />
-    <Compile Include="Migrations\201710151539392_fix user.Designer.cs">
-      <DependentUpon>201710151539392_fix user.cs</DependentUpon>
+    <Compile Include="Migrations\201710162116225_trying to fix azure.cs" />
+    <Compile Include="Migrations\201710162116225_trying to fix azure.Designer.cs">
+      <DependentUpon>201710162116225_trying to fix azure.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\EfRepository.cs" />
-    <Compile Include="Migrations\201710121911324_Init.cs" />
-    <Compile Include="Migrations\201710121911324_Init.Designer.cs">
-      <DependentUpon>201710121911324_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710131816033_post data model.cs" />
-    <Compile Include="Migrations\201710131816033_post data model.Designer.cs">
-      <DependentUpon>201710131816033_post data model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710140649190_new users and post model changes.cs" />
-    <Compile Include="Migrations\201710140649190_new users and post model changes.Designer.cs">
-      <DependentUpon>201710140649190_new users and post model changes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\PostRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,26 +86,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710121911324_Init.resx">
-      <DependentUpon>201710121911324_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710131816033_post data model.resx">
-      <DependentUpon>201710131816033_post data model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710140649190_new users and post model changes.resx">
-      <DependentUpon>201710140649190_new users and post model changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141454397_changes to user and post model.resx">
-      <DependentUpon>201710141454397_changes to user and post model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141501009_remove requeried field in user display name.resx">
-      <DependentUpon>201710141501009_remove requeried field in user display name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710151537226_fix.resx">
-      <DependentUpon>201710151537226_fix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710151539392_fix user.resx">
-      <DependentUpon>201710151539392_fix user.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710162116225_trying to fix azure.resx">
+      <DependentUpon>201710162116225_trying to fix azure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

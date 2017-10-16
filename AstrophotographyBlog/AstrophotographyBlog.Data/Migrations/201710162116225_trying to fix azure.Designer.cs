@@ -7,13 +7,13 @@ namespace AstrophotographyBlog.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Init : IMigrationMetadata
+    public sealed partial class tryingtofixazure : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(tryingtofixazure));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710121911324_Init"; }
+            get { return "201710162116225_trying to fix azure"; }
         }
         
         string IMigrationMetadata.Source
