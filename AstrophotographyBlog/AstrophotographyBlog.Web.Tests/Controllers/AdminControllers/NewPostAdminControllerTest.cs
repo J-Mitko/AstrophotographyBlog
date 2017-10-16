@@ -12,7 +12,7 @@ namespace AstrophotographyBlog.Web.Tests.Controllers.AdminControllers
     [TestFixture]
     class NewPostAdminControllerTest
     {
-        [Test]
+        //[Test]
         public void IndexActionShould_GetViewModel()
         {
             //// Arrange
@@ -26,7 +26,7 @@ namespace AstrophotographyBlog.Web.Tests.Controllers.AdminControllers
             //Assert.AreEqual(null, result.Model);
         }
 
-        [Test]
+        //[Test]
         public void IndexActionShould_PostViewModel()
         {
 
