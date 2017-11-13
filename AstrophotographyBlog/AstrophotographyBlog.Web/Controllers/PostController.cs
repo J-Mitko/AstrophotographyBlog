@@ -20,22 +20,11 @@ namespace AstrophotographyBlog.Web.Controllers
             this.postService = postService;
             this.userService = userService;
         }
-        // GET: Posts
-        //[HttpGet]
-        //public ActionResult Index()
-        //{
-        //    return View(this.postService.GetAll().ToList());
-        //}
-
+        
         // GET: Posts/Details/5
         [HttpGet]
         public ActionResult Details(Guid id)
         {
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-
             var getPost = this.postService.GetById(id);
             if (getPost == null)
             {

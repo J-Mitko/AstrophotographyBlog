@@ -43,7 +43,6 @@ namespace AstrophotographyBlog.Web.Controllers
             return this.View(viewModel);
         }
 
-        [OutputCache(CacheProfile = "LongCache")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

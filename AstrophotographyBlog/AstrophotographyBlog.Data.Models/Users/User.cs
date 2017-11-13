@@ -17,9 +17,9 @@ namespace AstrophotographyBlog.Data.Models.Users
         public User()
         {
             this.posts = new HashSet<Post>();
-            this.CreatedOn = DateTime.UtcNow;
+            //this.CreatedOn = DateTime.UtcNow;
         }
-
+        [Key]
         public override string Id
         {
             get
@@ -31,7 +31,8 @@ namespace AstrophotographyBlog.Data.Models.Users
                 base.Id = value;
             }
         }
-
+        [Required]
+        [MaxLength(50)]
         public override string UserName
         {
             get
@@ -55,14 +56,6 @@ namespace AstrophotographyBlog.Data.Models.Users
 
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
-
-        //[MinLength(3)]
-        //[MaxLength(50)]
-        //public string DisplayName { get; set; }
-
-        //[MinLength(2)]
-        //[MaxLength(3)]
-        //public string Country { get; set; }
 
         public ICollection<Post> Posts
         {

@@ -42,7 +42,7 @@ namespace AstrophotographyBlog.Web.Areas.Admin.Controllers
 
             this.postService.CreatePost(model.Title, model.ImageTarget, model.ImageUrl, model.ImageInfo, model.Location, model.Time, authorId);
 
-            return this.RedirectToAction("Index", "Home", new { area = "" });
+            return this.RedirectToRoute("default", null);
         }
     }
 }

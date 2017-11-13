@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201710162116225_trying to fix azure.Designer.cs">
       <DependentUpon>201710162116225_trying to fix azure.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710301821400_fix.cs" />
+    <Compile Include="Migrations\201710301821400_fix.Designer.cs">
+      <DependentUpon>201710301821400_fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\PostRepository.cs" />
@@ -88,6 +92,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710162116225_trying to fix azure.resx">
       <DependentUpon>201710162116225_trying to fix azure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710301821400_fix.resx">
+      <DependentUpon>201710301821400_fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

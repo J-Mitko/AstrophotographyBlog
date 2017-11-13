@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\My Documents\GitHub\AstrophotographyBlog\AstrophotographyBlog\AstrophotographyBlog.Web.Tests\bin\Debug\AstrophotographyBlog.Web.Tests.dll" total="10" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2017-10-17" time="12:33:12">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8794" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\My Documents\GitHub\AstrophotographyBlog\AstrophotographyBlog\OpenCover\224401f0-1642-4b7a-b87e-972200755261" machine-name="J_MITKO_LAPTOP" user="J-Mitko" user-domain="J_MITKO_LAPTOP" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\My Documents\GitHub\AstrophotographyBlog\AstrophotographyBlog\AstrophotographyBlog.Web.Tests\bin\Debug\AstrophotographyBlog.Web.Tests.dll" executed="True" result="Success" success="True" time="1.729" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="AstrophotographyBlog" executed="True" result="Success" success="True" time="1.721" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Web" executed="True" result="Success" success="True" time="1.721" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="1.720" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Controllers" executed="True" result="Success" success="True" time="1.556" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="HomeControllerTest" executed="True" result="Success" success="True" time="1.512" asserts="0">
+                        <results>
+                          <test-case name="AstrophotographyBlog.Web.Tests.Controllers.HomeControllerTest.About" executed="True" result="Success" success="True" time="1.236" asserts="0" />
+                          <test-case name="AstrophotographyBlog.Web.Tests.Controllers.HomeControllerTest.IndexShouldReturn_ListOfPosts" executed="True" result="Success" success="True" time="0.254" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="PostControllerTest" executed="True" result="Success" success="True" time="0.041" asserts="0">
+                        <results>
+                          <test-case name="AstrophotographyBlog.Web.Tests.Controllers.PostControllerTest.DetailsShould_ReturnCorrectModelView" executed="True" result="Success" success="True" time="0.027" asserts="0" />
+                          <test-case name="AstrophotographyBlog.Web.Tests.Controllers.PostControllerTest.DetailsShould_ReturnHttpNotFound_WhenNoMathingPostWereFound" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="Services" executed="True" result="Success" success="True" time="0.160" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="PostServiceTests" executed="True" result="Success" success="True" time="0.123" asserts="0">
+                        <results>
+                          <test-case name="AstrophotographyBlog.Web.Tests.Services.PostServiceTests.CreatePostShould_AddNewPostToPostRepository" executed="True" result="Success" success="True" time="0.085" asserts="0" />
+                          <test-case name="AstrophotographyBlog.Web.Tests.Services.PostServiceTests.CreatePostShould_CallCommitMethod" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                          <test-case name="AstrophotographyBlog.Web.Tests.Services.PostServiceTests.GetAllShould_ReturnAllPostFromPostRepository" executed="True" result="Success" success="True" time="0.023" asserts="0" />
+                          <test-case name="AstrophotographyBlog.Web.Tests.Services.PostServiceTests.GetByIdShould_ReturnCorrectPost" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="UserServiceTests" executed="True" result="Success" success="True" time="0.034" asserts="0">
+                        <results>
+                          <test-case name="AstrophotographyBlog.Web.Tests.Services.UserServiceTests.GetAllShould_ReturnAllUsers" executed="True" result="Success" success="True" time="0.008" asserts="0" />
+                          <test-case name="AstrophotographyBlog.Web.Tests.Services.UserServiceTests.GetByIdShould_ReturnCorrectUser" executed="True" result="Success" success="True" time="0.024" asserts="0" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.0">
+      <projectUrl>https://github.com/J-Mitko/AstrophotographyBlog.git/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.6.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/J-Mitko/AstrophotographyBlog.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec>* * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.BatchFile>
+      <command>&quot;C:\Program Files (x86)\NuGet\Visual Studio 2015\nuget.exe&quot; restore &quot;C:\Program Files (x86)\Jenkins\workspace\autobuild\AstrophotographyBlog\AstrophotographyBlog.sln&quot;</command>
+    </hudson.tasks.BatchFile>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.28">
+      <msBuildName>msbuild</msBuildName>
+      <msBuildFile>C:\Program Files (x86)\Jenkins\workspace\autobuild\AstrophotographyBlog\AstrophotographyBlog.sln</msBuildFile>
+      <cmdLineArgs>/p:Configuration=Release</cmdLineArgs>
+      <buildVariablesAsProperties>false</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+      <unstableIfWarnings>false</unstableIfWarnings>
+      <doNotUseChcpCommand>false</doNotUseChcpCommand>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+    <hudson.tasks.BatchFile>
+      <command>&quot;C:\Program Files (x86)\Jenkins\workspace\autobuild\AstrophotographyBlog\packages\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe&quot; AstrophotographyBlog\AstrophotographyBlog.Web.Tests\bin\Release\AstrophotographyBlog.Web.Tests.dll</command>
+    </hudson.tasks.BatchFile>
+    <hudson.plugins.msbuild.MsBuildBuilder plugin="msbuild@1.28">
+      <msBuildName>msbuild</msBuildName>
+      <msBuildFile>C:\Program Files (x86)\Jenkins\workspace\autobuild\AstrophotographyBlog\AstrophotographyBlog.sln</msBuildFile>
+      <cmdLineArgs>/p:Configuration=Release
+/p:DeployOnBuild=true
+/p:PublishProfile=&quot;D:\My Documents\GitHub\AstrophotographyBlog\AstrophotographyBlog\AstrophotographyBlog.Web\Properties\PublishProfiles\astrophotographyblog - Web Deploy.pubxml&quot;
+/p:Password=ZdtNb7SPCqlZPm6iomMvyGr2A2QbvH8exeGikcRKM808gwbzsYbAbAl2ksSD</cmdLineArgs>
+      <buildVariablesAsProperties>false</buildVariablesAsProperties>
+      <continueOnBuildFailure>false</continueOnBuildFailure>
+      <unstableIfWarnings>false</unstableIfWarnings>
+      <doNotUseChcpCommand>false</doNotUseChcpCommand>
+    </hudson.plugins.msbuild.MsBuildBuilder>
+  </builders>
+  <publishers>
+    <hudson.plugins.nunit.NUnitPublisher plugin="nunit@0.21">
+      <testResultsPattern>&quot;C:\Program Files (x86)\Jenkins\workspace\autobuild\*.xml&quot;</testResultsPattern>
+      <debug>false</debug>
+      <keepJUnitReports>false</keepJUnitReports>
+      <skipJUnitArchiver>false</skipJUnitArchiver>
+      <failIfNoResults>false</failIfNoResults>
+    </hudson.plugins.nunit.NUnitPublisher>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.34">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>
